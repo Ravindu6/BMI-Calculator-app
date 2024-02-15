@@ -1,0 +1,21 @@
+name: bmi_calculator_1
+description: A new Flutter project
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.1
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+# Remove the following line if you don't have the 'flutter_lints' package
+include: package:flutter_lints/flutter.yaml
