@@ -34,14 +34,17 @@ class CalculateScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          color: const Color.fromARGB(255, 18, 5, 46),
+      body: Container(
+        color: const Color.fromARGB(255, 18, 5, 46), // Background color for the entire screen
+        child: SingleChildScrollView(
+          
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(height: 100),
+                // Height TextFormField
                 TextFormField(
                   controller: _heightController,
                   onChanged: (value) =>
@@ -54,7 +57,8 @@ class CalculateScreen extends StatelessWidget {
                   ),
                   keyboardType: TextInputType.number,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 20),
+                // Weight TextFormField
                 TextFormField(
                   controller: _weightController,
                   onChanged: (value) =>
@@ -67,7 +71,7 @@ class CalculateScreen extends StatelessWidget {
                   ),
                   keyboardType: TextInputType.number,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -78,12 +82,12 @@ class CalculateScreen extends StatelessWidget {
                           _bmiController.calculateBMI();
                           Get.to(InfoScreen());
                         } else {
-                          // Show a message or handle invalid input
                           if (kDebugMode) {
                             print('Please enter valid height and weight.');
                           }
                         }
                       },
+              
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white, backgroundColor: Colors.pink,
                         padding: const EdgeInsets.all(16.0),
@@ -128,7 +132,7 @@ class CalculateScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 32),
+                const SizedBox(height: 50),
                 Obx(() {
                   final bmiResult = _bmiController.bmiResult.value;
 
@@ -153,7 +157,7 @@ class CalculateScreen extends StatelessWidget {
                             color: Color.fromARGB(255, 241, 236, 236),
                           ),
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: 15),
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.pink, width: 2.0),
@@ -174,6 +178,7 @@ class CalculateScreen extends StatelessWidget {
                     ),
                   );
                 }),
+                const SizedBox(height: 100),
               ],
             ),
           ),
